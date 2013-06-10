@@ -6,7 +6,7 @@ Android Library that provides iOS style pin number functionality
 ## How to use: 
 
  * Import the library into your project
- * Replace your EditText's with ```com.elavon.virtualmerchantmobile.widgets.EditTextPinNumber```
+ * Replace your EditText's with ```com.pixelmedia.androidpinnumber.EditTextPinNumber```
 
 ```xml
 <com.pixelmedia.androidpinnumber.EditTextPinNumber
