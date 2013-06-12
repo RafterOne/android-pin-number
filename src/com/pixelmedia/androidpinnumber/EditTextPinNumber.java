@@ -51,9 +51,9 @@ public class EditTextPinNumber extends EditText {
 
     public void clearTextChangedListeners()
     {
-        if (null == mListeners) return;
+        if (null == this.mListeners) return;
         
-        for (TextWatcher watcher : mListeners) {
+        for (TextWatcher watcher : this.mListeners) {
             super.removeTextChangedListener(watcher);
         }
         this.mListeners.clear();
