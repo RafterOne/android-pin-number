@@ -9,7 +9,7 @@ import android.widget.EditText;
 public class PinNumberDeleteKeyListener implements OnKeyListener  {
 
     
-    private EditText pin_box;
+    private final EditText pin_box;
     
     public PinNumberDeleteKeyListener(EditText pinBox) {
         this.pin_box = pinBox;          
@@ -34,8 +34,8 @@ public class PinNumberDeleteKeyListener implements OnKeyListener  {
             
                 Integer textlength = pinbox.getText().length();
                 if (textlength < 1) { 
-                    pin_box.requestFocus();
-                    pin_box.setText("");
+                    this.pin_box.requestFocus();
+                    this.pin_box.setText("");
                 }
             
             }
