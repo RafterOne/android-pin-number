@@ -30,10 +30,10 @@ public class EditTextPinNumber extends EditText {
     @Override
     public void addTextChangedListener(TextWatcher watcher)
     {       
-        if (mListeners == null) {
-            mListeners = new ArrayList<TextWatcher>();
+        if (this.mListeners == null) {
+            this.mListeners = new ArrayList<TextWatcher>();
         }
-        mListeners.add(watcher);
+        this.mListeners.add(watcher);
 
         super.addTextChangedListener(watcher);
     }
@@ -41,10 +41,10 @@ public class EditTextPinNumber extends EditText {
     @Override
     public void removeTextChangedListener(TextWatcher watcher)
     {       
-        if (null == mListeners) return;
-        final int i = mListeners.indexOf(watcher);
+        if (null == this.mListeners) return;
+        final int i = this.mListeners.indexOf(watcher);
         if (i >= 0) {
-            mListeners.remove(i);
+            this.mListeners.remove(i);
         }
         super.removeTextChangedListener(watcher);
     }
@@ -56,8 +56,8 @@ public class EditTextPinNumber extends EditText {
         for (TextWatcher watcher : mListeners) {
             super.removeTextChangedListener(watcher);
         }
-        mListeners.clear();
-        mListeners = null;
+        this.mListeners.clear();
+        this.mListeners = null;
     }
     
     @Override
