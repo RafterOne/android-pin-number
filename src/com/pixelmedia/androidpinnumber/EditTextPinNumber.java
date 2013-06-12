@@ -1,6 +1,9 @@
 package com.pixelmedia.androidpinnumber;
 
+import java.util.ArrayList;
+
 import android.content.Context;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
@@ -10,6 +13,8 @@ import android.widget.EditText;
 
 public class EditTextPinNumber extends EditText {
 
+    private ArrayList<TextWatcher> mListeners = null;
+    
     public EditTextPinNumber(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
@@ -20,6 +25,39 @@ public class EditTextPinNumber extends EditText {
 
     public EditTextPinNumber(Context context) {
         super(context);
+    }
+
+    @Override
+    public void addTextChangedListener(TextWatcher watcher)
+    {       
+        if (mListeners == null) {
+            mListeners = new ArrayList<TextWatcher>();
+        }
+        mListeners.add(watcher);
+
+        super.addTextChangedListener(watcher);
+    }
+
+    @Override
+    public void removeTextChangedListener(TextWatcher watcher)
+    {       
+        if (null == mListeners) return;
+        final int i = mListeners.indexOf(watcher);
+        if (i >= 0) {
+            mListeners.remove(i);
+        }
+        super.removeTextChangedListener(watcher);
+    }
+
+    public void clearTextChangedListeners()
+    {
+        if (null == mListeners) return;
+        
+        for (TextWatcher watcher : mListeners) {
+            super.removeTextChangedListener(watcher);
+        }
+        mListeners.clear();
+        mListeners = null;
     }
     
     @Override
