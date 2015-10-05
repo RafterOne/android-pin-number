@@ -3,6 +3,8 @@ android-pin-number
 
 Android Library that provides iOS style pin number functionality
 
+![Screenshot of library in use](https://cloud.githubusercontent.com/assets/240571/10281631/cf4a18ba-6b43-11e5-9e10-5f6056c00899.png)
+
 ## How to use: 
 
  * Import the library into your project
